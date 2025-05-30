@@ -54,43 +54,43 @@ const HelpSidebar = () => {
   ];
 
   return (
-    <Sidebar>
-      <SidebarHeader className="p-4">
-        <div className="flex items-center gap-2">
-          <span className="text-2xl">❓</span>
-          <h2 className="font-bold text-lg">Help & Guide</h2>
+    <Sidebar className="border-r-2 border-gray-200 bg-gradient-to-b from-gray-50 to-white">
+      <SidebarHeader className="p-6 bg-gradient-to-r from-indigo-500 to-purple-600 text-white">
+        <div className="flex items-center gap-3">
+          <span className="text-3xl">❓</span>
+          <h2 className="font-bold text-xl">Help & Guide</h2>
         </div>
-        <SidebarTrigger />
+        <SidebarTrigger className="text-white hover:bg-white/20 mt-2" />
       </SidebarHeader>
       
-      <SidebarContent className="p-4 space-y-6">
-        <Card className="bg-gradient-to-r from-blue-50 to-purple-50">
+      <SidebarContent className="p-6 space-y-6">
+        <Card className="bg-gradient-to-br from-blue-50 to-purple-50 border-2 border-blue-200 shadow-md">
           <CardHeader>
-            <CardTitle className="text-sm flex items-center gap-2">
+            <CardTitle className="text-lg flex items-center gap-2 text-blue-800">
               🎓 First Time Here?
             </CardTitle>
           </CardHeader>
-          <CardContent className="text-xs space-y-2">
-            <p className="text-gray-600">
+          <CardContent className="text-sm space-y-3">
+            <p className="text-gray-700 leading-relaxed">
               This tool helps you explore how genes behave differently in healthy vs disease samples.
             </p>
-            <Badge variant="secondary" className="text-xs">
+            <Badge variant="secondary" className="text-sm bg-blue-100 text-blue-800 border border-blue-300">
               No biology background needed!
             </Badge>
           </CardContent>
         </Card>
 
         {helpSections.map((section, index) => (
-          <SidebarGroup key={index}>
-            <SidebarGroupLabel className="text-sm font-semibold">
+          <SidebarGroup key={index} className="space-y-3">
+            <SidebarGroupLabel className="text-base font-bold text-gray-800 border-b border-gray-200 pb-2">
               {section.title}
             </SidebarGroupLabel>
             <SidebarGroupContent>
-              <SidebarMenu>
+              <SidebarMenu className="space-y-2">
                 {section.items.map((item, itemIndex) => (
                   <SidebarMenuItem key={itemIndex}>
-                    <SidebarMenuButton className="text-xs h-auto p-2">
-                      <span className="text-left">{item}</span>
+                    <SidebarMenuButton className="text-sm h-auto p-3 hover:bg-blue-50 rounded-lg transition-colors duration-200">
+                      <span className="text-left leading-relaxed text-gray-700">{item}</span>
                     </SidebarMenuButton>
                   </SidebarMenuItem>
                 ))}
@@ -99,29 +99,29 @@ const HelpSidebar = () => {
           </SidebarGroup>
         ))}
 
-        <Card>
+        <Card className="border-2 border-purple-200 shadow-md">
           <CardHeader>
-            <CardTitle className="text-sm">📚 Quick Glossary</CardTitle>
+            <CardTitle className="text-lg text-purple-800">📚 Quick Glossary</CardTitle>
           </CardHeader>
-          <CardContent className="space-y-3">
+          <CardContent className="space-y-4">
             {glossary.map((item, index) => (
-              <div key={index} className="border-l-2 border-blue-200 pl-3">
-                <div className="font-semibold text-xs text-blue-700">{item.term}</div>
-                <div className="text-xs text-gray-600 mt-1">{item.definition}</div>
+              <div key={index} className="border-l-4 border-purple-300 pl-4 py-2 bg-purple-50 rounded-r-lg">
+                <div className="font-bold text-sm text-purple-800">{item.term}</div>
+                <div className="text-xs text-gray-700 mt-1 leading-relaxed">{item.definition}</div>
               </div>
             ))}
           </CardContent>
         </Card>
 
-        <Card className="bg-gradient-to-r from-green-50 to-blue-50">
+        <Card className="bg-gradient-to-br from-green-50 to-blue-50 border-2 border-green-200 shadow-md">
           <CardHeader>
-            <CardTitle className="text-sm">🤔 Sample Questions</CardTitle>
+            <CardTitle className="text-lg text-green-800">🤔 Sample Questions</CardTitle>
           </CardHeader>
-          <CardContent className="space-y-2">
-            <div className="text-xs space-y-1">
-              <p className="text-green-700 font-medium">"Which gene changes the most?"</p>
-              <p className="text-blue-700 font-medium">"What happens to TP53 in cancer?"</p>
-              <p className="text-purple-700 font-medium">"Are cell growth genes affected?"</p>
+          <CardContent className="space-y-3">
+            <div className="text-sm space-y-2">
+              <p className="text-green-700 font-semibold p-2 bg-green-100 rounded-lg">"Which gene changes the most?"</p>
+              <p className="text-blue-700 font-semibold p-2 bg-blue-100 rounded-lg">"What happens to TP53 in cancer?"</p>
+              <p className="text-purple-700 font-semibold p-2 bg-purple-100 rounded-lg">"Are cell growth genes affected?"</p>
             </div>
           </CardContent>
         </Card>
