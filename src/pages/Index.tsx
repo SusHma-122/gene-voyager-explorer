@@ -29,50 +29,50 @@ const Index = () => {
       <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 via-purple-50 to-pink-50 w-full">
         <div className="flex w-full">
           <HelpSidebar />
-          <main className="flex-1 p-6">
+          <main className="flex-1 p-8">
             <div className="max-w-7xl mx-auto">
-              <header className="text-center mb-10">
-                <h1 className="text-5xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent mb-4">
+              <header className="text-center mb-12 px-6">
+                <h1 className="text-6xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent mb-6 tracking-tight leading-tight">
                   🧬 Gene Expression Explorer
                 </h1>
-                <p className="text-gray-600 text-xl max-w-3xl mx-auto leading-relaxed">
+                <p className="text-gray-700 text-xl max-w-4xl mx-auto leading-relaxed tracking-wide px-4 py-6 bg-white/60 backdrop-blur-sm rounded-2xl border border-blue-100 shadow-sm">
                   Explore how genes behave in healthy and disease samples across multiple conditions — no biology degree required! 
-                  Discover the molecular stories hidden in real research data.
+                  Discover the molecular stories hidden in real research data with interactive visualizations and beginner-friendly explanations.
                 </p>
                 {activeDataset && (
-                  <div className="mt-4 p-3 bg-white/80 backdrop-blur-sm rounded-lg border-2 border-blue-200 inline-block">
-                    <span className="text-sm text-gray-600">Currently analyzing: </span>
-                    <span className="font-semibold text-blue-800">{activeDataset.id} - {activeDataset.diseaseType}</span>
+                  <div className="mt-6 p-4 bg-white/90 backdrop-blur-sm rounded-xl border-2 border-blue-200 inline-block shadow-lg">
+                    <span className="text-sm text-gray-600 tracking-wide">Currently analyzing: </span>
+                    <span className="font-semibold text-blue-800 tracking-wide">{activeDataset.id} - {activeDataset.diseaseType}</span>
                   </div>
                 )}
               </header>
 
               <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
-                <TabsList className="grid w-full grid-cols-4 mb-8 h-14 bg-white/80 backdrop-blur-sm border-2 border-gray-200 shadow-lg rounded-xl">
+                <TabsList className="grid w-full grid-cols-4 mb-10 h-16 bg-white/90 backdrop-blur-sm border-2 border-gray-200 shadow-xl rounded-2xl p-2">
                   <TabsTrigger 
                     value="landing" 
-                    className="flex items-center gap-2 text-lg font-semibold data-[state=active]:bg-gradient-to-r data-[state=active]:from-blue-500 data-[state=active]:to-purple-500 data-[state=active]:text-white rounded-lg transition-all duration-200"
+                    className="flex items-center gap-3 text-lg font-semibold data-[state=active]:bg-gradient-to-r data-[state=active]:from-blue-500 data-[state=active]:to-purple-500 data-[state=active]:text-white rounded-xl transition-all duration-300 px-6 py-3 tracking-wide"
                   >
                     🏠 Choose Dataset
                   </TabsTrigger>
                   <TabsTrigger 
                     value="overview" 
                     disabled={!activeDataset} 
-                    className="flex items-center gap-2 text-lg font-semibold data-[state=active]:bg-gradient-to-r data-[state=active]:from-green-500 data-[state=active]:to-blue-500 data-[state=active]:text-white rounded-lg transition-all duration-200 disabled:opacity-50"
+                    className="flex items-center gap-3 text-lg font-semibold data-[state=active]:bg-gradient-to-r data-[state=active]:from-green-500 data-[state=active]:to-blue-500 data-[state=active]:text-white rounded-xl transition-all duration-300 px-6 py-3 tracking-wide disabled:opacity-50"
                   >
                     🧬 Dataset Overview
                   </TabsTrigger>
                   <TabsTrigger 
                     value="analysis" 
                     disabled={!activeDataset} 
-                    className="flex items-center gap-2 text-lg font-semibold data-[state=active]:bg-gradient-to-r data-[state=active]:from-purple-500 data-[state=active]:to-pink-500 data-[state=active]:text-white rounded-lg transition-all duration-200 disabled:opacity-50"
+                    className="flex items-center gap-3 text-lg font-semibold data-[state=active]:bg-gradient-to-r data-[state=active]:from-purple-500 data-[state=active]:to-pink-500 data-[state=active]:text-white rounded-xl transition-all duration-300 px-6 py-3 tracking-wide disabled:opacity-50"
                   >
                     📊 Gene Analysis
                   </TabsTrigger>
                   <TabsTrigger 
                     value="explorer" 
                     disabled={!activeDataset} 
-                    className="flex items-center gap-2 text-lg font-semibold data-[state=active]:bg-gradient-to-r data-[state=active]:from-pink-500 data-[state=active]:to-red-500 data-[state=active]:text-white rounded-lg transition-all duration-200 disabled:opacity-50"
+                    className="flex items-center gap-3 text-lg font-semibold data-[state=active]:bg-gradient-to-r data-[state=active]:from-pink-500 data-[state=active]:to-red-500 data-[state=active]:text-white rounded-xl transition-all duration-300 px-6 py-3 tracking-wide disabled:opacity-50"
                   >
                     🔍 Gene Explorer
                   </TabsTrigger>
