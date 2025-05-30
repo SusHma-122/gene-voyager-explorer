@@ -1,40 +1,3 @@
-# Welcome to your Lovable project
-
-## Project info
-
-**URL**: https://lovable.dev/projects/1d2fd1bb-f0c6-4bdb-ad68-f5ebad001ffe
-
-## How can I edit this code?
-
-There are several ways of editing your application.
-
-**Use Lovable**
-
-Simply visit the [Lovable Project](https://lovable.dev/projects/1d2fd1bb-f0c6-4bdb-ad68-f5ebad001ffe) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
 
 **Edit a file directly in GitHub**
 
@@ -42,7 +5,45 @@ npm run dev
 - Click the "Edit" button (pencil icon) at the top right of the file view.
 - Make your changes and commit the changes.
 
-**Use GitHub Codespaces**
+🧬 *Project Description – Gene Expression Explorer* 
+
+Gene Expression Explorer is a web-based tool designed to help researchers and healthcare professionals analyze and understand gene expression data. This data shows how active or inactive genes are in different people — especially when comparing healthy individuals to those with diseases like cancer, diabetes, etc.
+
+The tool uses public data from the NCBI GEO (Gene Expression Omnibus), a large online database of gene activity collected from real experiments. By selecting a dataset that compares healthy vs disease samples, our tool performs the following key tasks:
+
+
+ *What the Tool Does* :
+
+1. Load and Clean Data
+
+Accesses gene expression datasets using Python and GEOparse.
+
+2. Analyze Gene Differences
+
+Identifies which genes behave differently in healthy vs diseased samples.
+
+3. Predict Disease Status
+
+Uses machine learning to classify samples as healthy or diseased.
+
+4. Show Results Visually
+
+Displays charts and graphs for easy understanding.
+
+5. Simple Web Interface
+
+Allows users to explore and search gene data easily.
+
+
+🎯 *Why This Project Matters* 
+
+1)Bridges biology and computer science (bioinformatics)
+
+2)Helps in early disease detection and research
+
+3)Promotes the use of open science and real data
+
+4)Supports healthcare innovations using technology**Use GitHub Codespaces**
 
 - Navigate to the main page of your repository.
 - Click on the "Code" button (green button) near the top right.
@@ -60,14 +61,6 @@ This project is built with:
 - shadcn-ui
 - Tailwind CSS
 
-## How can I deploy this project?
 
-Simply open [Lovable](https://lovable.dev/projects/1d2fd1bb-f0c6-4bdb-ad68-f5ebad001ffe) and click on Share -> Publish.
 
-## Can I connect a custom domain to my Lovable project?
 
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
