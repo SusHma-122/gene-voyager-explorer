@@ -8,14 +8,20 @@ import DifferentialAnalysis from '@/components/DifferentialAnalysis';
 import GeneExplorer from '@/components/GeneExplorer';
 import HelpSidebar from '@/components/HelpSidebar';
 import { SidebarProvider } from '@/components/ui/sidebar';
+import { Dataset } from '@/data/datasets';
+import { toast } from '@/hooks/use-toast';
 
 const Index = () => {
-  const [activeDataset, setActiveDataset] = useState(null);
+  const [activeDataset, setActiveDataset] = useState<Dataset | null>(null);
   const [activeTab, setActiveTab] = useState('landing');
 
-  const handleDatasetLoad = (dataset) => {
+  const handleDatasetLoad = (dataset: Dataset) => {
     setActiveDataset(dataset);
     setActiveTab('overview');
+    toast({
+      title: `Dataset Loaded! 🎉`,
+      description: `${dataset.id}: ${dataset.title} is ready for exploration.`,
+    });
   };
 
   return (
@@ -30,9 +36,15 @@ const Index = () => {
                   🧬 Gene Expression Explorer
                 </h1>
                 <p className="text-gray-600 text-xl max-w-3xl mx-auto leading-relaxed">
-                  Explore how genes behave in healthy and disease samples — no biology degree required! 
-                  Discover the molecular stories hidden in your data.
+                  Explore how genes behave in healthy and disease samples across multiple conditions — no biology degree required! 
+                  Discover the molecular stories hidden in real research data.
                 </p>
+                {activeDataset && (
+                  <div className="mt-4 p-3 bg-white/80 backdrop-blur-sm rounded-lg border-2 border-blue-200 inline-block">
+                    <span className="text-sm text-gray-600">Currently analyzing: </span>
+                    <span className="font-semibold text-blue-800">{activeDataset.id} - {activeDataset.diseaseType}</span>
+                  </div>
+                )}
               </header>
 
               <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
@@ -41,7 +53,7 @@ const Index = () => {
                     value="landing" 
                     className="flex items-center gap-2 text-lg font-semibold data-[state=active]:bg-gradient-to-r data-[state=active]:from-blue-500 data-[state=active]:to-purple-500 data-[state=active]:text-white rounded-lg transition-all duration-200"
                   >
-                    🏠 Start Here
+                    🏠 Choose Dataset
                   </TabsTrigger>
                   <TabsTrigger 
                     value="overview" 
